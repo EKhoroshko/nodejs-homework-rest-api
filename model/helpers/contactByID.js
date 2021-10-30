@@ -1,4 +1,4 @@
-const listContacts = require('../controllers/listContacts')
+const listContacts = require('../helpers/listContacts')
 
 const getContactById = async (contactId) => {
   try {
