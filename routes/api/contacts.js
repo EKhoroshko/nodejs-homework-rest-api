@@ -1,24 +1,22 @@
 const express = require('express')
 const router = express.Router()
+const gelAll = require('../../controllers/contacts/gelAll')
+const getByID = require('../../controllers/contacts/getByID')
+const postNewContact = require('../../controllers/contacts/postNewContact')
+const deleteContact = require('../../controllers/contacts/deleteContsct')
+const patchContact = require('../../controllers/contacts/patchContact')
+const putContact = require('../../controllers/contacts/putContact')
 
-router.get('/', async (req, res, next) => {
-  res.json({ message: 'template message' })
-})
+router.get('/', gelAll)
 
-router.get('/:contactId', async (req, res, next) => {
-  res.json({ message: 'template message' })
-})
+router.get('/:contactId', getByID)
 
-router.post('/', async (req, res, next) => {
-  res.json({ message: 'template message' })
-})
+router.post('/', postNewContact)
 
-router.delete('/:contactId', async (req, res, next) => {
-  res.json({ message: 'template message' })
-})
+router.delete('/:contactId', deleteContact)
 
-router.patch('/:contactId', async (req, res, next) => {
-  res.json({ message: 'template message' })
-})
+router.patch('/:contactId', patchContact)
+
+router.put('/:contactId', putContact)
 
 module.exports = router
