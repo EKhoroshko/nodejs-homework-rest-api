@@ -1,4 +1,4 @@
-const getContactById = require('../helpers/contactByID')
+const getContactById = require('../../helpers/contactByID')
 
 const getByID = async (req, res, next) => {
   try {

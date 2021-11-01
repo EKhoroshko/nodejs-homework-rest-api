@@ -1,5 +1,5 @@
-const schemaJoi = require('../validation/valid-contact')
-const addContact = require('../helpers/addContact')
+const schemaJoi = require('../../midlewares/validation/valid-contact')
+const addContact = require('../../helpers/addContact')
 
 const postNewContact = async (req, res, next) => {
   try {

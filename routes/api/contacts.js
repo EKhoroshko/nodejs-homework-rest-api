@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const gelAll = require('../../model/controllers/gelAll')
-const getByID = require('../../model/controllers/getByID')
-const postNewContact = require('../../model/controllers/postNewContact')
-const deleteContact = require('../../model/controllers/deleteContsct')
-const patchContact = require('../../model/controllers/patchContact')
-const putContact = require('../../model/controllers/putContact')
+const gelAll = require('../../controllers/contacts/gelAll')
+const getByID = require('../../controllers/contacts/getByID')
+const postNewContact = require('../../controllers/contacts/postNewContact')
+const deleteContact = require('../../controllers/contacts/deleteContsct')
+const patchContact = require('../../controllers/contacts/patchContact')
+const putContact = require('../../controllers/contacts/putContact')
 
 router.get('/', gelAll)
 

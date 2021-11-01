@@ -1,4 +1,4 @@
-const removeContact = require('../helpers/removeContact')
+const removeContact = require('../../helpers/removeContact')
 
 const deleteContact = async (req, res, next) => {
   try {

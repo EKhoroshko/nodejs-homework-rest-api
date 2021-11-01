@@ -1,4 +1,4 @@
-const listContacts = require('../helpers/listContacts')
+const listContacts = require('../../helpers/listContacts')
 
 const getAll = async (req, res, next) => {
   try {

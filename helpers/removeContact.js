@@ -1,6 +1,6 @@
 const fs = require('fs/promises')
 const listContacts = require('./listContacts')
-const getContactById = require('../helpers/contactByID')
+const getContactById = require('./contactByID')
 const path = require('path')
 const contactsPath = path.resolve('model/contacts.json')
 

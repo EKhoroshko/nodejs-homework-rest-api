@@ -12,5 +12,4 @@ const schemaJoi = Joi.object({
   phone: Joi.string().required(),
 })
 
-
 module.exports = schemaJoi

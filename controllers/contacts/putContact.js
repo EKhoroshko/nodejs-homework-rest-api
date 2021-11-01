@@ -1,5 +1,5 @@
-const schemaJoi = require('../validation/valid-contact')
-const updateContact = require('../helpers/updateContact')
+const schemaJoi = require('../../midlewares/validation/valid-contact')
+const updateContact = require('../../helpers/updateContact')
 
 const putContact = async (req, res, next) => {
   try {
