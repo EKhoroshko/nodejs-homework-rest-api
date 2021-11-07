@@ -1,11 +1,12 @@
-const getContactById = require('../../helpers/contactByID')
+const Contact = require('../../model/contacts.model')
 
 const getByID = async (req, res, next) => {
+  const { contactId } = req.params
   try {
-    const chooseContact = await getContactById(req.params.contactId)
+    const chooseContact = await Contact.findOne({ _id: contactId })
     if (chooseContact) {
       res.status(200).json({
-        ...chooseContact
+        chooseContact
       })
     } else {
       return res.status(404).json({

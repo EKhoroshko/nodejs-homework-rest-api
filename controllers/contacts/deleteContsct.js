@@ -1,8 +1,9 @@
-const removeContact = require('../../helpers/removeContact')
+const Contact = require('../../model/contacts.model')
 
 const deleteContact = async (req, res, next) => {
+  const { contactId } = req.params
   try {
-    const deleteContact = await removeContact(req.params.contactId)
+    const deleteContact = await Contact.findByIdAndRemove(contactId)
     if (deleteContact) {
       return res.status(200).json({
         message: 'contact deleted',

@@ -10,6 +10,13 @@ const schemaJoi = Joi.object({
     .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
 
   phone: Joi.string().required(),
+
+  favorite: Joi.boolean()
+
 })
 
-module.exports = schemaJoi
+const schemaJoiPatch = Joi.object({
+  favorite: Joi.boolean().required()
+})
+
+module.exports = { schemaJoi, schemaJoiPatch }
