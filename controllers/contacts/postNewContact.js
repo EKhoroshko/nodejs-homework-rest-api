@@ -7,7 +7,8 @@ const postNewContact = async (req, res, next) => {
     if (error) {
       return res.status(400).json({ message: 'missing required name field' })
     }
-    const newContact = await Contact.create(req.body)
+    const infoContact = { ...req.body, owner: req.user._id }
+    const newContact = await Contact.create(infoContact)
     res.status(201).json({ newContact })
   } catch (error) {
     next(error)
