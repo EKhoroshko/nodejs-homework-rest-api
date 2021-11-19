@@ -4,7 +4,6 @@ const current = async (req, res, next) => {
   try {
     const { _id } = req.user
     const user = await User.findById(_id, ' email subscription')
-    console.log(user)
     res.status(200).json({
       email: user.email,
       subscription: user.subscription
