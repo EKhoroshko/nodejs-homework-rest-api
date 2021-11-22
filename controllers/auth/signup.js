@@ -1,6 +1,7 @@
 const User = require('../../model/users.model')
 const authJoi = require('../../midlewares/auth-validation/auth-valid')
 const bcrypt = require('bcryptjs')
+const gravatar = require('gravatar')
 
 const signup = async (req, res, next) => {
   try {
@@ -16,7 +17,8 @@ const signup = async (req, res, next) => {
       return res.status(409).json({ message: 'Email in use' })
     }
     const newPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
-    await User.create({ email, password: newPassword })
+    const src = gravatar.url(email, { s: '250' })
+    await User.create({ email, password: newPassword, avatarURL: src })
     res.status(201).json({
       newUser: {
         email,
